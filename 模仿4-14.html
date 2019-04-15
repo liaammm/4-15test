@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content=" IE=edge,chrome=1">
+    <title>布局设计</title>
+    <script  language="javascript"type="text/javascript" src="../jquery-1.8.3.min.js"></script>
+    <style>
+        *{
+           margin: 0;
+           padding:0;
+        }
+
+        /* 取消序号样式 */
+       ol,ul,li{
+           list-style: none;
+       }
+        a{ 
+            text-decoration:none;
+        }
+        img { 
+            border:0;
+            }
+        a{ 
+            text-decoration:none;
+            }
+        a img { 
+            vertical-align: middle;
+            }
+        .top{
+            width: 100%;
+            height:25px;
+            background-color: #0a5d14;
+        }
+        .top-con{
+            width:1110px;
+            margin: 0 auto;
+            height:25px;
+        }
+        .top-right{
+            float:right;
+            padding-top: 3px;
+        }
+        .top-right ul li a{
+            font-family: 'Courier New', Courier, monospace;
+            color: #f5f5f5;
+        }
+        .head{
+            width: 100%;
+            height: 107px;
+            background-color: #ced3cf;
+            background-size:auto ;
+            background-repeat:repeat ;
+        }
+        .date{
+            width: auto;
+            height:75px;
+            right:10px;
+            float: right;
+            margin-top: 50px;
+            padding-top:0;
+            overflow: hidden;
+        }
+        .head-con{
+            width: 1110px;
+            margin:0 auto;
+            height:107px;
+        }
+        .logo{
+            width:350px;
+            height:97px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            float:left;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+        /* 标语 */
+        .xx{
+            width: 100px;
+            height:57px;
+            padding-top:5px;
+            float: right;
+        }
+        #menu {
+            margin:0 auto;
+            display:block;
+            width:100%;
+            height:41px; 
+            background:#207b2a;
+            }
+        #nav {
+            display:block; 
+            width:1110px; 
+            height:41px; 
+            margin:0 auto;
+            }
+        #nav ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        #nav .mainlevel {
+            float:left; 
+            background:#207b2a; 
+            display:block;
+            position: relative;
+            list-style:none;
+            width:100px;
+            line-height:40px;
+            font-size:20px;
+            text-align:center;
+            border:0;
+            float:left;
+            }
+
+        /* 一级菜单标题名 */
+        /* #nav .mainlevel a {
+            color:#eee; 
+            text-decoration:none; 
+            line-height:41px; 
+            height:41px; 
+            text-align:center; 
+            padding:0 24px; 
+            display:block; 
+            _width:48px;
+            } 
+        */
+        #nav .mainlevel a{
+            color:#FFF;
+	        text-decoration:none;
+        }
+        #nav .mainlevel:hover{
+            color:#eee; 
+            text-decoration:none; 
+            background:#0d4a14;
+        }
+        #nav .mainlevel ul{
+            position: absolute;
+            top:40px;
+            left: 0; 
+            display: none;
+            z-index: 100000;
+            width: 2000px;
+        }
+        #nav .mainlevel ul li{
+          float: none;
+          background:#3f240e; 
+          font:14px "微软雅黑", sans-serif; 
+          padding:5px 5px;
+        }
+        #nav .mainlevel li a {
+            padding:0 5px; 
+            line-height:18px; 
+            height:18px; 
+            display:block; 
+            _padding-bottom:6px;
+            }
+
+        #nav .mainlevel ul li:hover{
+            background:#c2832f;
+        }
+        /* 二级菜单上的小箭头 */
+        .triangle_con{
+            height:9px;
+            background:url("./img/bird.png") 36px 0 no-repeat; 
+            display:block; 
+            _margin-bottom:-6px;
+        }
+/* ///////////////////////////////// */
+   
+        
+      
+        .log {
+            margin:100px auto; 
+            width:1000px; 
+            text-transform:capitalize; 
+            line-height:200%;
+        }
+        /* 图片滚动行 */
+    .container{
+        width:100%;
+        height:500px;
+        position:relative;
+        /* top:70px; */
+        background-color: rgb(30, 143, 77);
+    }
+    
+    .picbox{
+            width: 1110px;
+            height: 500px;
+            margin:auto auto;
+            padding: 0;
+			}
+    
+ 
+     /* 内容栏 */
+        .row1{
+            width: 100%;
+            height: 397px;
+            background: url('../4月8号/img/row2-bg.png') top center no-repeat #f5f5f5;
+            padding-top:42px;  
+            padding-top:42px;
+        }
+        .box-news1{
+            width: 1110px;
+            height:397px;
+            margin: 0 auto;
+        }
+        
+        .row1-con{
+            width:80%;
+            height:100%;
+            margin: 0 auto;
+            background-color: #c2832f;
+        }
+        .camp{
+            width: 730px;
+            height: 355px;
+            margin-right:30px;
+
+        }
+        .news1-title{
+            width:730px; 
+            height:33px; 
+            border-bottom:solid 3px #e5e5e5;
+        }
+        .titlename{
+            width:94px; 
+            height:33px; 
+            line-height:33px; 
+            text-align:center; 
+            float:left;
+            border-bottom:solid 3px #d19c6a;
+        }
+        .titlefont{
+            font:21px "微软雅黑", sans-serif; color:#000000;
+        }
+        .textfont{
+            font:15px "微软雅黑", sans-serif; color:#000000;
+        }
+        .con-pic{
+            width:350px; 
+            height:319px; 
+            float:left;
+            margin-right:30px;
+        }
+        .news{
+            width: 350px;
+            height: 319px;
+            float: left;
+            margin:0;
+            padding:0;
+        }
+        /* 设置图片容器大小 */
+        .first-img{
+            width:350px; 
+            height:230px; 
+            margin-top:20px;
+        }
+
+        .news ul{
+            margin-top:19px;
+            margin-left:0;
+        }
+        .news li{
+            font-size:15px;
+            height:30px;
+            line-height:30px;
+            line-height:26px;
+            width:350px;
+            overflow:hidden;
+            text-align:left;
+        }
+        .news li a{ 
+            display:block; 
+            color:#333333;
+            width:290px; 
+            float:left;
+        }
+        .news li a:hover{
+            color:#034692;
+        }
+        .more{
+            height: 30px;
+            width: 100px;
+            background:url("../4月8号/img/more.JPG") no-repeat; 
+            float:right; 
+            margin-top:25px;
+
+        }
+        .contain{
+            width: 1110px;
+            margin:0 auto;
+            height: auto;
+            background: #f5f5f5
+        }
+        .clear{
+            width: 100%;
+            height: 0px;
+            line-height: 0;
+            font-size: 0px;
+            overflow: hidden;
+            clear:both;
+            display: block;
+            display: inline;
+        }
+        .link{
+            width: 100%;
+            height:130px;
+            background: url( ) no-repeat;
+            background-position: center;
+            background-size: 100% auto;
+        }
+        .foot{
+            width:100%;
+            height:66px;
+            background:#676767;
+            text-align:center; 
+            color:#adadad; 
+            font-size:12px; 
+            line-height:30px;
+            padding-top:15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 搜索帮助行 -->
+    <div class="top">
+        <div class="top-con">
+        <div class="top-left"></div>
+        <div class="top-right">
+            <ul>
+                <li >
+                    <a style="text-decoration:none" href="">搜索</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <!-- logo行 -->
+    <div class="head">
+        <div class="head-con">
+            <div class="logo">
+                <a title="4月8日网页布局" href="">
+                    <img width="370"height="97" src="../4月3号/tit.JPG" title="4月8日网页布局"
+                     alt="4月8日网页布局" border="0" />
+                </a>
+            </div>
+            <div class="xx">
+                <img src="../4月8号/img/tweet.png" alt="图片加载未完成">             
+            </div>
+            <!-- 插入实时时间 -->
+            <div class="date">
+                <div id="systemTime">
+                     <div>13:24:03</div>
+                     <div>星期四2018-06-05</div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <!-- 菜单目录行 -->
+    <div id="menu">
+        <div id="nav">
+        <ul>
+            <li class="mainlevel" id="mainlevel_01">
+                <a href=#>首页</a>
+            </li>
+            <li class="mainlevel" id="mainlevel_01">
+                <a href=#>网站总览</a>
+                <ul >
+                    <span class="triangle_con"></span>
+                    <li>
+                        <a href="" target="_blank">网站介绍</a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank">副标题2</a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank">副标题3</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="mainlevel" id="mainlevel_01">
+                    <a href=#>组织结构</a>
+                    <ul >
+                        <span class="triangle_con"></span>
+                        <li>
+                            <a href="" target="_blank">副标题1</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">副标题2</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">副标题3</a>
+                        </li>
+                    </ul>
+            </li>
+            <li class="mainlevel" id="mainlevel_01">
+                    <a href=#>国际交流</a>
+                    <ul >
+                        <span class="triangle_con"></span>
+                        <li>
+                            <a href="" target="_blank">副标题1</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">副标题2</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">副标题3</a>
+                        </li>
+                    </ul>
+            </li>
+            <li class="mainlevel" id="mainlevel_01">
+                    <a href=#>联系我们</a>
+                    <ul >
+                        <span class="triangle_con"></span>
+                        <li>
+                            <a href="" target="_blank">副标题1</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">副标题2</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">副标题3</a>
+                        </li>
+                    </ul>
+                </li>
+              
+        </ul>
+        </div>
+    </div>
+    <!-- 图片滚动行 -->
+    <div class="container">
+            <div class="picbox"></div>
+    </div>
+
+    
+    <!-- 主题内容 -->
+    <!-- 第一行 -->
+    <div class="row1">
+        <div class=box-news1>
+            <div class="camp">
+                <div class="news1-title">
+                    <div class="titlename titlefont">网页新闻</div>
+                </div>
+                <div class="news1-content">
+                    <!-- 插入图片 -->
+                    <div class="con-pic">
+                        <div class="first-img">
+                            <a href="" title="新闻内容" ><img src="../4月8号/img/new1.JPG" alt="" width="350" height="230"></a>
+                        </div>
+                    </div>
+                    <!-- 插入新闻 -->
+                    <div class="news">
+                        <ul>
+                            <li class="textfont">
+                                <a href="">【新农业·我们在行动】新农科建设研讨...</a>
+                                <span class="newtime"><small>4-15</small></span>
+                           </li>
+                           <li class="textfont">
+                                <a href="">【新农业·我们在行动】新农科建设研讨...</a>
+                                <span class="newtime"><small>4-13</small></span>
+                           </li>
+                           <li class="textfont">
+                                <a href="">【新农业·我们在行动】新农科建设研讨...</a>
+                                <span class="newtime"><small>4-10</small></span>
+                           </li>
+                           <li class="textfont">
+                                <a href="">省大学生运动会女子甲组足球赛在开赛</a>
+                                <span class="newtime"><small>4-06</small></span>
+                           </li>
+                           <li class="textfont">
+                                <a href="">省大学生运动会女子甲组足球赛在我校开赛</a>
+                                <span class="newtime"><small>4-06</small></span>
+                           </li>
+                           <li class="textfont">
+                                <a href="">省大学生运动会女子甲组足球赛在我校开赛</a>
+                                <span class="newtime"><small>4-06</small></span>
+                           </li>
+                           <li class="textfont">
+                                <a href="">省大学生运动会女子甲组足球赛在我校开赛</a>
+                                <span class="newtime"><small>4-06</small></span>
+                           </li>
+                           <li class="textfont">
+                                <a href="">省大学生运动会女子甲组足球赛在我校开赛</a>
+                                <span class="newtime"><small>4-06</small></span>
+                           </li>
+
+                        </ul>
+                        <a href=""> 
+                            <div class="more"> </div>
+                        </a>
+        
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="anno">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script></script>
+    <!-- 第二行 -->
+    <div class="contain"></div>
+    <div class="clear"></div>
+    <div class="link"></div>
+    <div class="foot"></div>
+    <div align="center"></div>
+    <script src="./diyslider.js"></script>
+    <script type="text/javascript">
+    //Javascript Document
+    //二级菜单
+        $(function(){
+        hide();  /*DOM元素加载完就执行隐藏函数*/
+        });
+    function hide(){
+            $(".mainlevel ul").css("display","none");   /*隐藏函数，就是将二级菜单隐藏*/
+    }
+    /*以下是第二部分*/
+    $(".mainlevel ").mouseover(
+        function(){
+            $(this).find(".mainlevel ul").css("display","block");  /*鼠标移动到一级菜单上就执行显示函数*/
+        }
+    );
+    $(".mainlevel").mouseout(
+        function(){
+            hide();   /*鼠标离开后又隐藏*/
+        }
+    );
+
+
+
+   //加载滚动图片
+   var pic = [
+			{url:"../4月8号/img/1.jpg",href:"#"},
+			{url:"../4月8号/img/2.png",href:"#"},
+            {url:"../4月8号/img/3.gif",href:"#"},
+            {url:"../4月8号/img/4.jpg",href:"#"},
+		];
+		var sc1 = new scrollPic({
+			box:'.picbox',
+			times:2,//自动播放时间
+			picList:pic
+		});
+		sc1.move();
+
+  
+    // 显示时间函数
+    //刷新系统时间句柄
+	var IntervalSystemTime = setInterval("flushSystemTime()",1000);
+	//刷新系统时间
+	function flushSystemTime(){
+		var date =new Date();
+		var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+        var obj = $(".date #systemTime >div");
+		obj[0].innerHTML = date.format("hh:mm:ss");
+        if(	obj[1].innerHTML != weekday[date.getDay()] + date.format("yyyy-MM-dd") )
+        {
+			obj[1].innerHTML = weekday[date.getDay()] + date.format("yyyy-MM-dd");
+		}
+	}
+	//扩展时间转换
+	Date.prototype.format = function (format) {
+	   var args = {
+		   "M+": this.getMonth() + 1,
+		   "d+": this.getDate(),
+		   "h+": this.getHours(),
+		   "m+": this.getMinutes(),
+		   "s+": this.getSeconds(),
+		   "q+": Math.floor((this.getMonth() + 3) / 3),  //quarter
+		   "S": this.getMilliseconds()
+	   };
+	   if (/(y+)/.test(format))
+		   format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+	   for (var i in args) {
+		   var n = args[i];
+		   if (new RegExp("(" + i + ")").test(format))
+			   format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? n : ("00" + n).substr(("" + n).length));
+	   }
+	   return format;
+   };
+
+    </script>
+</body>
+</html>
