@@ -38,7 +38,7 @@ scrollPic.prototype = {
     //创建上一张和下一张点击按钮
     var prev = "<a id='prev'>&lt;</a>";
     var next = "<a id='next'>&gt;</a>";
-    // var next = "<a href='javascript:void(0);' id='next'>&gt;</a>";
+ 
 
     //插入到大容器中
     box.append(oUl);
@@ -159,7 +159,7 @@ scrollPic.prototype = {
          prev.show();
          next.show();
     },function(){
-         timer=setInterval(autoPlay,1000);
+         timer=setInterval(autoPlay,time*1000);
          prev.hide();
          next.hide();
     })
@@ -168,10 +168,12 @@ scrollPic.prototype = {
        _Index=$(this).index();
        changeView()
      })
+     //切换图片
     function changeView(){
       animated = false;
       ball.stop().animate({
-        "left":-_Index*w},function(){
+        "left":-_Index*w
+      },function(){
           animated = true;
           if(_Index>=len){
           ball.css('left',0);
